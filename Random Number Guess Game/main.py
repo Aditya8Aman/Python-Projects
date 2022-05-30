@@ -4,16 +4,20 @@ import random
 ranNumber = random.randint(1,100)
 guess=0
 while (True):
-    num = int(input("Enter you number:"))
-    if num == ranNumber:
-        print(f"You guessed the correct random number:{num} in {guess} guess")
-        break
-    elif num>ranNumber:
-        print("Its lower than that")
+    try:
+        num = int(input("Enter you number:"))
+        if num == ranNumber:
+            print(f"You guessed the correct random number:{num} in {guess} guess")
+            break
+        elif num>ranNumber:
+            print("Its lower than that")
 
+        else:
+            print("Its higher than that")
+    except Expection as e:
+        print(f"You did not entered a valid number: {e}")
     else:
-        print("Its higher than that")
-
+         print("try again")
     guess+=1
 with open("hiscore.txt",'r') as f:
     hs=int(f.read())
