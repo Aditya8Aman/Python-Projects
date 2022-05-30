@@ -14,7 +14,7 @@ while (True):
 
         else:
             print("Its higher than that")
-    except Expection as e:
+    except Exception as e:
         print(f"You did not entered a valid number: {e}")
     else:
          print("try again")
